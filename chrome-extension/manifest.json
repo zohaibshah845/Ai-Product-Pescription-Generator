@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AI Product Description Generator",
+  "version": "1.0.0",
+  "description": "Generate AI-powered product descriptions for your e-commerce store",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "contextMenus",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+    
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+ 
+}
